@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Card Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8e3a1;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 90%;
+        }
+        
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        th {
+            background-color: #f7d25b;
+            font-size: 18px;
+            color: #000;
+        }
+        
+        td {
+            background-color: #fff9e3;
+        }
+        
+        .card-cell img {
+            width: 50px;
+            height: auto;
+        }
+        
+        .circle {
+            width: 40px;
+            height: 40px;
+            background-color: #f7d25b;
+            border: 2px solid #000;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 5px;
+        }
+        
+        .card-label {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        .banner {
+            background: url('red-ribbon.png');
+            /* Add your ribbon image here */
+            width: 100%;
+            height: 50px;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Card Game Table</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Minimum<br>In: 5<br>Out: 10</th>
+                <th colspan="4">All Suits</th>
+            </tr>
+            <tr>
+                <th></th>
+                <th>All Hearts</th>
+                <th>All Spades</th>
+                <th>All Diamonds</th>
+                <th>All Clubs</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="card-label">All Jacks</td>
+                <td class="card-cell">
+                    <img src="jack-hearts.png" alt="Jack of Hearts"><br>
+                    <div class="circle"></div>
+                </td>
+                <td class="card-cell">
+                    <img src="jack-spades.png" alt="Jack of Spades"><br>
+                    <div class="circle"></div>
+                </td>
+                <td class="card-cell">
+                    <img src="jack-diamonds.png" alt="Jack of Diamonds"><br>
+                    <div class="circle"></div>
+                </td>
+                <td class="card-cell">
+                    <img src="jack-clubs.png" alt="Jack of Clubs"><br>
+                    <div class="circle"></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="card-label">All Queens</td>
+                <td class="card-cell">
+                    <img src="queen-hearts.png" alt="Queen of Hearts"><br>
+                    <div class="circle"></div>
+                </td>
+                <td class="card-cell">
+                    <img src="queen-spades.png" alt="Queen of Spades"><br>
+                    <div class="circle"></div>
+                </td>
+                <td class="card-cell">
+                    <img src="queen-diamonds.png" alt="Queen of Diamonds"><br>
+                    <div class="circle"></div>
+                </td>
+                <td class="card-cell">
+                    <img src="queen-clubs.png" alt="Queen of Clubs"><br>
+                    <div class="circle"></div>
+                </td>
+            </tr>
+            <tr>
+                <td class="card-label">All Kings</td>
+                <td class="card-cell">
+                    <img src="king-hearts.png" alt="King of Hearts"><br>
+                    <div class="circle"></div>
+                </td>
+                <td class="card-cell">
+                    <img src="king-spades.png" alt="King of Spades"><br>
+                    <div class="circle"></div>
+                </td>
+                <td class="card-cell">
+                    <img src="king-diamonds.png" alt="King of Diamonds"><br>
+                    <div class="circle"></div>
+                </td>
+                <td class="card-cell">
+                    <img src="king-clubs.png" alt="King of Clubs"><br>
+                    <div class="circle"></div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
