@@ -4,145 +4,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom Card Table</title>
+    <title>Dynamic Div Value Chart</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f8e3a1;
-            text-align: center;
-            padding: 20px;
         }
         
-        table {
-            margin: 0 auto;
-            border-collapse: collapse;
-            width: 90%;
+        #coins {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 10px;
         }
         
-        th,
-        td {
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: center;
+        .coin {
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+            background-size: cover;
+            background-position: center;
+            border: none;
+            outline: none;
         }
         
-        th {
-            background-color: #f7d25b;
-            font-size: 18px;
-            color: #000;
+        #grid-container {
+            display: grid;
+            grid-template-rows: auto auto;
+            gap: 10px;
         }
         
-        td {
-            background-color: #fff9e3;
+        #column-buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 50px);
+            gap: 10px;
         }
         
-        .card-cell img {
+        .col-button {
             width: 50px;
-            height: auto;
+            height: 30px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            text-align: center;
         }
         
-        .circle {
-            width: 40px;
-            height: 40px;
-            background-color: #f7d25b;
-            border: 2px solid #000;
-            border-radius: 50%;
-            display: inline-block;
-            margin: 5px;
+        #divs {
+            display: grid;
+            grid-template-columns: 50px 50px 50px 50px;
+            gap: 10px;
         }
         
-        .card-label {
-            font-size: 18px;
-            font-weight: bold;
-        }
-        
-        .banner {
-            background: url('red-ribbon.png');
-            /* Add your ribbon image here */
-            width: 100%;
+        .row-button {
+            width: 100px;
+            margin-right: 10px;
             height: 50px;
-            background-size: contain;
-            background-repeat: no-repeat;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            grid-column: 1 / span 1;
+        }
+        
+        .box {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #333;
+            background-color: #f0f0f0;
+            cursor: pointer;
+        }
+        
+        #get-value-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #2196F3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        
+        #selected-values {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #333;
         }
     </style>
 </head>
 
 <body>
-    <h1>Card Game Table</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Minimum<br>In: 5<br>Out: 10</th>
-                <th colspan="4">All Suits</th>
-            </tr>
-            <tr>
-                <th></th>
-                <th>All Hearts</th>
-                <th>All Spades</th>
-                <th>All Diamonds</th>
-                <th>All Clubs</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td class="card-label">All Jacks</td>
-                <td class="card-cell">
-                    <img src="jack-hearts.png" alt="Jack of Hearts"><br>
-                    <div class="circle"></div>
-                </td>
-                <td class="card-cell">
-                    <img src="jack-spades.png" alt="Jack of Spades"><br>
-                    <div class="circle"></div>
-                </td>
-                <td class="card-cell">
-                    <img src="jack-diamonds.png" alt="Jack of Diamonds"><br>
-                    <div class="circle"></div>
-                </td>
-                <td class="card-cell">
-                    <img src="jack-clubs.png" alt="Jack of Clubs"><br>
-                    <div class="circle"></div>
-                </td>
-            </tr>
-            <tr>
-                <td class="card-label">All Queens</td>
-                <td class="card-cell">
-                    <img src="queen-hearts.png" alt="Queen of Hearts"><br>
-                    <div class="circle"></div>
-                </td>
-                <td class="card-cell">
-                    <img src="queen-spades.png" alt="Queen of Spades"><br>
-                    <div class="circle"></div>
-                </td>
-                <td class="card-cell">
-                    <img src="queen-diamonds.png" alt="Queen of Diamonds"><br>
-                    <div class="circle"></div>
-                </td>
-                <td class="card-cell">
-                    <img src="queen-clubs.png" alt="Queen of Clubs"><br>
-                    <div class="circle"></div>
-                </td>
-            </tr>
-            <tr>
-                <td class="card-label">All Kings</td>
-                <td class="card-cell">
-                    <img src="king-hearts.png" alt="King of Hearts"><br>
-                    <div class="circle"></div>
-                </td>
-                <td class="card-cell">
-                    <img src="king-spades.png" alt="King of Spades"><br>
-                    <div class="circle"></div>
-                </td>
-                <td class="card-cell">
-                    <img src="king-diamonds.png" alt="King of Diamonds"><br>
-                    <div class="circle"></div>
-                </td>
-                <td class="card-cell">
-                    <img src="king-clubs.png" alt="King of Clubs"><br>
-                    <div class="circle"></div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+
+    <div id="coins">
+        <button class="coin" data-value="1" style="background-image: url('./images/chip.png');"></button>
+        <button class="coin" data-value="2" style="background-image: url('https://www.freeiconspng.com/uploads/poker-chip-png-0.png');"></button>
+        <button class="coin" data-value="3" style="background-image: url('https://www.freeiconspng.com/uploads/poker-chip-png-0.png');"></button>
+        <button class="coin" data-value="4" style="background-image: url('https://www.freeiconspng.com/uploads/poker-chip-png-0.png');"></button>
+        <button class="coin" data-value="5" style="background-image: url('https://www.freeiconspng.com/uploads/poker-chip-png-0.png');"></button>
+    </div>
+
+    <div id="grid-container">
+        <!-- Column Buttons -->
+        <div id="column-buttons">
+            <button class="col-button" data-col="0">All Col 1</button>
+            <button class="col-button" data-col="1">All Col 2</button>
+            <button class="col-button" data-col="2">All Col 3</button>
+            <button class="col-button" data-col="3">All Col 4</button>
+        </div>
+
+        <!-- Grid with Row Buttons -->
+        <div id="divs">
+            <button class="row-button" data-row="0">All Row 1</button>
+            <div class="box" data-index="0">0</div>
+            <div class="box" data-index="1">0</div>
+            <div class="box" data-index="2">0</div>
+            <div class="box" data-index="3">0</div>
+
+            <button class="row-button" data-row="1">All Row 2</button>
+            <div class="box" data-index="4">0</div>
+            <div class="box" data-index="5">0</div>
+            <div class="box" data-index="6">0</div>
+            <div class="box" data-index="7">0</div>
+
+            <button class="row-button" data-row="2">All Row 3</button>
+            <div class="box" data-index="8">0</div>
+            <div class="box" data-index="9">0</div>
+            <div class="box" data-index="10">0</div>
+            <div class="box" data-index="11">0</div>
+        </div>
+    </div>
+
+    <button id="get-value-button">Get Values</button>
+    <div id="selected-values"></div>
+
+    <script>
+        let selectedCoinValue = null;
+
+        // Add event listeners to the coins
+        document.querySelectorAll(".coin").forEach((coin) => {
+            coin.addEventListener("click", () => {
+                selectedCoinValue = parseInt(coin.dataset.value, 10);
+                console.log(`Selected Coin Value: ${selectedCoinValue}`);
+            });
+        });
+
+        // Add event listeners to the divs
+        document.querySelectorAll(".box").forEach((box) => {
+            box.addEventListener("click", () => {
+                if (selectedCoinValue !== null) {
+                    const currentValue = parseInt(box.textContent, 10);
+                    box.textContent = currentValue + selectedCoinValue;
+                } else {
+                    alert("Please select a coin first!");
+                }
+            });
+        });
+
+        // Get Values button functionality
+        document.getElementById("get-value-button").addEventListener("click", () => {
+            const values = [];
+            document.querySelectorAll(".box").forEach((box, index) => {
+                const value = parseInt(box.textContent, 10);
+                if (value > 0) {
+                    values.push(`Div ${index}: ${value}`);
+                }
+            });
+
+            const selectedValues = values.length ?
+                values.join(", ") :
+                "No values selected.";
+            document.getElementById("selected-values").textContent = `Selected Values: ${selectedValues}`;
+        });
+    </script>
+
 </body>
 
 </html>
