@@ -33,6 +33,7 @@
         }
         
         #column-buttons {
+            margin-left: 7%;
             display: grid;
             grid-template-columns: repeat(4, 50px);
             gap: 10px;
@@ -51,12 +52,12 @@
         
         #divs {
             display: grid;
-            grid-template-columns: 50px 50px 50px 50px;
+            grid-template-columns: 50px 50px 50px 50px 50px;
             gap: 10px;
         }
         
         .row-button {
-            width: 100px;
+            width: 50px;
             margin-right: 10px;
             height: 50px;
             cursor: pointer;
@@ -79,6 +80,8 @@
             border: 1px solid #333;
             background-color: #f0f0f0;
             cursor: pointer;
+            background-size: cover;
+            background-position: center;
         }
         
         #get-value-button {
@@ -100,13 +103,12 @@
 </head>
 
 <body>
-
     <div id="coins">
-        <button class="coin" data-value="1" style="background-image: url('./images/chip.png');"></button>
-        <button class="coin" data-value="2" style="background-image: url('https://www.freeiconspng.com/uploads/poker-chip-png-0.png');"></button>
-        <button class="coin" data-value="3" style="background-image: url('https://www.freeiconspng.com/uploads/poker-chip-png-0.png');"></button>
-        <button class="coin" data-value="4" style="background-image: url('https://www.freeiconspng.com/uploads/poker-chip-png-0.png');"></button>
-        <button class="coin" data-value="5" style="background-image: url('https://www.freeiconspng.com/uploads/poker-chip-png-0.png');"></button>
+        <button class="coin" data-value="1" style="background-image: url('./images/chip.png');">1</button>
+        <button class="coin" data-value="2" style="background-image: url('./images/chip2.png');">2</button>
+        <button class="coin" data-value="3" style="background-image: url('./images//chip3.png');">3</button>
+        <button class="coin" data-value="4" style="background-image: url('./images/chip4.png');">4</button>
+        <button class="coin" data-value="5" style="background-image: url('./images/chip6.png');">5</button>
     </div>
 
     <div id="grid-container">
@@ -122,21 +124,21 @@
         <div id="divs">
             <button class="row-button" data-row="0">All Row 1</button>
             <div class="box" data-index="0">0</div>
-            <div class="box" data-index="1">0</div>
-            <div class="box" data-index="2">0</div>
-            <div class="box" data-index="3">0</div>
+            <div class="box" data-index="1">1</div>
+            <div class="box" data-index="2">2</div>
+            <div class="box" data-index="3">3</div>
 
             <button class="row-button" data-row="1">All Row 2</button>
-            <div class="box" data-index="4">0</div>
-            <div class="box" data-index="5">0</div>
-            <div class="box" data-index="6">0</div>
-            <div class="box" data-index="7">0</div>
+            <div class="box" data-index="4">4</div>
+            <div class="box" data-index="5">5</div>
+            <div class="box" data-index="6">6</div>
+            <div class="box" data-index="7">7</div>
 
             <button class="row-button" data-row="2">All Row 3</button>
-            <div class="box" data-index="8">0</div>
-            <div class="box" data-index="9">0</div>
-            <div class="box" data-index="10">0</div>
-            <div class="box" data-index="11">0</div>
+            <div class="box" data-index="8">8</div>
+            <div class="box" data-index="9">9</div>
+            <div class="box" data-index="10">10</div>
+            <div class="box" data-index="11">11</div>
         </div>
     </div>
 
@@ -145,11 +147,13 @@
 
     <script>
         let selectedCoinValue = null;
+        let selectedCoinImage = null;
 
         // Add event listeners to the coins
         document.querySelectorAll(".coin").forEach((coin) => {
             coin.addEventListener("click", () => {
                 selectedCoinValue = parseInt(coin.dataset.value, 10);
+                selectedCoinImage = coin.style.backgroundImage; // Store the selected coin's image URL
                 console.log(`Selected Coin Value: ${selectedCoinValue}`);
             });
         });
@@ -157,9 +161,67 @@
         // Add event listeners to the divs
         document.querySelectorAll(".box").forEach((box) => {
             box.addEventListener("click", () => {
-                if (selectedCoinValue !== null) {
-                    const currentValue = parseInt(box.textContent, 10);
-                    box.textContent = currentValue + selectedCoinValue;
+                if (selectedCoinValue !== null && selectedCoinImage !== null) {
+                    if (box.style.backgroundImage === selectedCoinImage) {
+                        // Increase value if the selected coin image already exists in the div
+                        const currentValue = parseInt(box.textContent.replace('Value: ', ''), 10) || 0;
+                        box.textContent = ` ${currentValue + selectedCoinValue}`;
+                    } else {
+                        // Set the div with the selected coin's image and value
+                        box.style.backgroundImage = selectedCoinImage;
+                        box.textContent = ` ${selectedCoinValue}`;
+                    }
+                } else {
+                    alert("Please select a coin first!");
+                }
+            });
+        });
+
+        // Row All button functionality
+        document.querySelectorAll(".row-button").forEach((button) => {
+            button.addEventListener("click", () => {
+                const rowIndex = parseInt(button.dataset.row, 10);
+                const startIndex = rowIndex * 4;
+                const rowDivs = document.querySelectorAll(".box");
+
+                if (selectedCoinImage !== null) {
+                    for (let i = startIndex; i < startIndex + 4; i++) {
+                        const div = rowDivs[i];
+                        if (div.style.backgroundImage === selectedCoinImage) {
+                            // Increase value if the selected coin image already exists in the div
+                            const currentValue = parseInt(div.textContent.replace('Value: ', ''), 10) || 0;
+                            div.textContent = ` ${currentValue + selectedCoinValue}`;
+                        } else {
+                            // Set the div with the selected coin's image and value
+                            div.style.backgroundImage = selectedCoinImage;
+                            div.textContent = ` ${selectedCoinValue}`;
+                        }
+                    }
+                } else {
+                    alert("Please select a coin first!");
+                }
+            });
+        });
+
+        // Column All button functionality
+        document.querySelectorAll(".col-button").forEach((button) => {
+            button.addEventListener("click", () => {
+                const colIndex = parseInt(button.dataset.col, 10);
+                const colDivs = document.querySelectorAll(".box");
+
+                if (selectedCoinImage !== null) {
+                    for (let i = colIndex; i < colDivs.length; i += 4) {
+                        const div = colDivs[i];
+                        if (div.style.backgroundImage === selectedCoinImage) {
+                            // Increase value if the selected coin image already exists in the div
+                            const currentValue = parseInt(div.textContent.replace('Value: ', ''), 10) || 0;
+                            div.textContent = ` ${currentValue + selectedCoinValue}`;
+                        } else {
+                            // Set the div with the selected coin's image and value
+                            div.style.backgroundImage = selectedCoinImage;
+                            div.textContent = ` ${selectedCoinValue}`;
+                        }
+                    }
                 } else {
                     alert("Please select a coin first!");
                 }
@@ -170,16 +232,15 @@
         document.getElementById("get-value-button").addEventListener("click", () => {
             const values = [];
             document.querySelectorAll(".box").forEach((box, index) => {
-                const value = parseInt(box.textContent, 10);
-                if (value > 0) {
-                    values.push(`Div ${index}: ${value}`);
+                if (box.style.backgroundImage) {
+                    values.push(`Div ${index}: ${box.textContent}`); // Show the div's value
                 }
             });
 
             const selectedValues = values.length ?
                 values.join(", ") :
                 "No values selected.";
-            document.getElementById("selected-values").textContent = `Selected Values: ${selectedValues}`;
+            document.getElementById("selected-values").innerHTML = `Selected Values: ${selectedValues}`;
         });
     </script>
 
