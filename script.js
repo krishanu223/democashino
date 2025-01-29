@@ -87,16 +87,17 @@ document.querySelectorAll(".col-button").forEach((button) => {
 });
 
 // Get Values button functionality
-document.getElementById("get-value-button").addEventListener("click", () => {
-    const values = [];
-    document.querySelectorAll(".box").forEach((box, index) => {
-        if (box.style.backgroundImage) {
-            values.push(`Div ${index}: ${box.textContent}`); // Show the div's value
-        }
-    });
 
-    const selectedValues = values.length ?
-        values.join(", ") :
-        "No values selected.";
-    document.getElementById("selected-values").innerHTML = `Selected Values: ${selectedValues}`;
-});
+
+/////////////////////////////////////   Roation ///////////////////////////////////////////////
+function rotateDiv() {
+    document.getElementById("outerDiv").classList.toggle("rotate");
+    document.getElementById("innerDiv").classList.toggle("rotate2");
+}
+
+window.onload = function () {
+    setTimeout(() => {
+        rotateDiv() // Run once after 1 second
+        setInterval(rotateDiv, 60000); // Then repeat every 1 second
+    }, 60000);
+};

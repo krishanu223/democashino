@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotate a Div</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            display: flex;
+            border-radius: 50%;
+            background-image: url("./images/Outer-Counter-Clockwise.png");
+            background-size: cover;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            z-index: 0;
+            position: absolute;
+            transition: transform 4s ease-in-out;
+        }
+        
+        #innerDiv {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            z-index: 1;
+            top: 50px;
+            left: 50px;
+            transition: transform 3s ease-in-out;
+            background-size: cover;
+            background-image: url("./images/Inner-Clockwise.png");
+        }
+        
+        .rotate {
+            transform: rotate(1545deg);
+        }
+        
+        .rotate2 {
+            transform: rotate(-1545deg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box" id="myDiv">
+
+    </div>
+    <div class="box" id="innerDiv"></div>
+    <button onclick="rotateDiv()">Rotate</button>
+
+    <script>
+        function rotateDiv() {
+            document.getElementById("myDiv").classList.toggle("rotate");
+            document.getElementById("innerDiv").classList.toggle("rotate2");
+        }
+    </script>
+
+</body>
+
+</html>
