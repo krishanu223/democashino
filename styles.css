@@ -414,11 +414,14 @@ tr {
     position: absolute;
     width: 400px;
     height: 400px;
-    top: 2%;
+    top: 9%;
     align-items: center;
     display: flex;
     left: 60%;
     justify-content: center;
+    background-image: url(./images/wheelfra2.png);
+    background-size: 107%;
+    background-position-x: -27px;
 }
 
 .wheel_circle {

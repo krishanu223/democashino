@@ -67,9 +67,9 @@
             fill: none;
             stroke: #00ff00;
             stroke-dasharray: 314;
-            /* Full circle circumference */
+            /* Full circle */
             stroke-dashoffset: 314;
-            /* Start as empty */
+            /* Hidden initially */
             transition: stroke-dashoffset 1s linear;
         }
         /* Center Circle */
@@ -91,7 +91,7 @@
         
         .text {
             color: white;
-            font-size: 24px;
+            font-size: 20px;
             font-weight: bold;
         }
     </style>
@@ -108,8 +108,8 @@
         <!-- Circular Progress Bar -->
         <div class="progress-ring">
             <svg width="220" height="220">
-                <circle cx="110" cy="110" r="100" stroke="#444"></circle> <!-- Background circle -->
-                <circle id="progress" cx="110" cy="110" r="100" stroke-linecap="round"></circle> <!-- Animated Progress -->
+                <circle cx="110" cy="110" r="50" stroke="#333"></circle> <!-- Background circle -->
+                <circle id="progress" cx="110" cy="110" r="50"></circle> <!-- Animated Progress -->
             </svg>
         </div>
 
@@ -139,7 +139,7 @@
                 timeLeft--;
                 countdownText.innerText = timeLeft; // Update countdown text
 
-                let progressValue = 314 * (timeLeft / 60); // Calculate stroke-dashoffset
+                let progressValue = 314 - (314 * (60 - timeLeft)) / 60; // Calculate progress
                 progress.style.strokeDashoffset = progressValue;
 
                 if (timeLeft <= 0) {
