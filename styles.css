@@ -84,7 +84,7 @@ header {
 }
 
 .point {
-    width: 180px;
+    width: 188px;
     height: 30px;
     border-radius: 3px;
     border: 2px solid rgb(210, 145, 71);
@@ -140,7 +140,7 @@ header {
 
 main {
     width: 100vw;
-    height: 120vh;
+    height: 93vh;
     background-image: url("./images/bc.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -151,7 +151,7 @@ main {
     position: absolute;
     margin: 5px;
     width: 55%;
-    height: 75vh;
+    height: 60vh;
     background-image: linear-gradient( 305deg, hsl(60deg 76% 92%) 0%, hsl(58deg 73% 84%) 6%, hsl(57deg 72% 76%) 12%, hsl(56deg 73% 68%) 18%, hsl(55deg 74% 59%) 24%, hsl(53deg 79% 56%) 29%, hsl(50deg 85% 55%) 35%, hsl(48deg 91% 54%) 41%, hsl(46deg 97% 52%) 47%, hsl(44deg 97% 59%) 53%, hsl(45deg 88% 68%) 59%, hsl(47deg 77% 76%) 65%, hsl(49deg 60% 83%) 71%, hsl(50deg 36% 86%) 76%, hsl(48deg 38% 73%) 82%, hsl(46deg 39% 60%) 88%, hsl(45deg 43% 48%) 94%, hsl(45deg 79% 34%) 100%);
     border-radius: 7px;
     display: flex;
@@ -177,8 +177,8 @@ tr {
 }
 
 .td_f_img {
-    width: 90%;
-    height: 90%;
+    width: 75%;
+    height: 71%;
 }
 
 .td1,
@@ -196,22 +196,22 @@ tr {
 }
 
 .card {
-    width: 42%;
+    width: 37%;
     box-shadow: 0px 2px 6px 1px black;
     border-radius: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .history {
     border-radius: 3px;
     position: absolute;
-    top: 65%;
+    top: 66%;
     left: 1%;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 38vw;
-    height: 16vh;
+    height: 14vh;
     background: linear-gradient( 305deg, hsl(60deg 76% 92%) 0%, hsl(58deg 73% 84%) 6%, hsl(57deg 72% 76%) 12%, hsl(56deg 73% 68%) 18%, hsl(55deg 74% 59%) 24%, hsl(53deg 79% 56%) 29%, hsl(50deg 85% 55%) 35%, hsl(48deg 91% 54%) 41%, hsl(46deg 97% 52%) 47%, hsl(44deg 97% 59%) 53%, hsl(45deg 88% 68%) 59%, hsl(47deg 77% 76%) 65%, hsl(49deg 60% 83%) 71%, hsl(50deg 36% 86%) 76%, hsl(48deg 38% 73%) 82%, hsl(46deg 39% 60%) 88%, hsl(45deg 43% 48%) 94%, hsl(45deg 79% 34%) 100%);
     ;
 }
@@ -290,7 +290,7 @@ tr {
     position: absolute;
     font-family: Roboto Condensed;
     font-weight: 500;
-    font-size: .8rem;
+    font-size: .6rem;
     margin-bottom: 8%;
 }
 
@@ -317,11 +317,11 @@ tr {
     font-weight: 800;
     font-family: Roboto Condensed;
     margin-top: 2%;
-    margin-left: -10%;
+    margin-left: -7%;
 }
 
 .All_hearts {
-    width: 6%;
+    width: 5%;
     position: absolute;
     height: 8%;
     margin-top: 2%;
@@ -353,7 +353,7 @@ tr {
     display: flex;
     gap: 10px;
     position: absolute;
-    top: 83%;
+    top: 85%;
     left: 15%;
 }
 
@@ -392,9 +392,9 @@ tr {
     position: relative;
     color: white;
     width: 14%;
-    top: 49%;
+    top: 52%;
     left: 40%;
-    height: 11%;
+    height: 10%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -412,16 +412,16 @@ tr {
 
 .wheel_contanair {
     position: absolute;
-    width: 400px;
-    height: 400px;
-    top: 9%;
+    width: 330px;
+    height: 330px;
+    top: 5%;
     align-items: center;
     display: flex;
-    left: 60%;
+    left: 63%;
     justify-content: center;
     background-image: url(./images/wheelfra2.png);
     background-size: 107%;
-    background-position-x: -27px;
+    background-position-x: -21px;
 }
 
 .wheel_circle {
@@ -481,9 +481,9 @@ tr {
 
 .buttonsec {
     width: 13vw;
-    height: 17%;
+    height: 15%;
     position: relative;
-    top: 80%;
+    top: 83%;
     margin: 5px;
     display: flex;
     flex-direction: column;
@@ -505,6 +505,91 @@ tr {
     background: linear-gradient(0deg, rgba(251, 147, 0, 1) 24%, rgba(255, 188, 85, 1) 49%);
 }
 
+.base-timer {
+    position: relative;
+    width: 104px;
+    height: 104px;
+}
+
+.base-timer__svg {
+    transform: scaleX(-1);
+}
+
+.base-timer__circle {
+    fill: none;
+    stroke: none;
+}
+
+.base-timer__path-elapsed {
+    stroke-width: 7px;
+    stroke: rgb(93, 93, 93);
+}
+
+.base-timer__path-remaining {
+    stroke-width: 7px;
+    stroke-linecap: round;
+    transform: rotate(90deg);
+    transform-origin: center;
+    transition: 1s linear all;
+    fill-rule: nonzero;
+    stroke: currentColor;
+}
+
+.base-timer__path-remaining.green {
+    color: rgb(34, 255, 0)
+}
+
+.base-timer__path-remaining.orange {
+    color: rgb(30, 255, 0);
+}
+
+.base-timer__path-remaining.red {
+    color: rgb(43, 255, 0);
+}
+
+.base-timer__label {
+    position: absolute;
+    width: 104px;
+    height: 104px;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+}
+
+.action_button {
+    position: absolute;
+    width: 14%;
+    top: 80%;
+    display: flex;
+    left: 55%;
+    flex-direction: column;
+    height: 19%;
+}
+
+.bet_button,
+.repeat_button,
+.clear_button {
+    width: 100%;
+    height: 33%;
+    border: 5px solid rgb(255 73 0 / 94%);
+    margin: 3px;
+    border-radius: 5px;
+    box-shadow: 1px 3px 5px 1px;
+    text-align: center;
+    background: linear-gradient(0deg, rgb(223 189 140) 24%, rgb(255 155 0) 49%);
+}
+
+#app_timmer {
+    position: absolute;
+    top: 82%;
+    left: 72%;
+    background-color: #515151;
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px;
+}
+
 .res_img {
     width: 4.5%;
     height: 23%;
@@ -515,6 +600,7 @@ tr {
 
 .circle span {
     font-weight: 600;
+    font-size: .8rem;
     font-family: Roboto Condensed;
 }
 
