@@ -424,6 +424,11 @@ tr {
     left: -3%;
 }
 
+.active_coin {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px 5px rgba(255, 215, 0, 0.8);
+}
+
 .wheel_contanair {
     position: absolute;
     width: 380px;

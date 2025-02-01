@@ -1,4 +1,5 @@
-let notice = document.querySelector('.notice')
+let notice = document.querySelector('.notice');
+let coins = document.querySelectorAll('.coin')
 let sre = window.innerWidth
 console.log(sre)
 if (window.window.innerWidth < 1000) {
@@ -13,6 +14,8 @@ document.querySelectorAll(".coin").forEach((coin) => {
         selectedCoinValue = parseInt(coin.dataset.value, 10);
         selectedCoinImage = coin.style.backgroundImage; // Store the selected coin's image URL
         console.log(`Selected Coin Value: ${selectedCoinValue}`);
+
+
     });
 });
 
@@ -129,3 +132,13 @@ function degupdate() {
     }
 }
 setInterval(degupdate, 1000);
+
+////////////////////////////////////////   coin event ////////////////////////////////////
+
+coins.forEach(coin => {
+    coin.addEventListener("click", () => {
+        // Remove 'active' class from all buttons
+        coins.forEach(c => c.classList.remove("active_coin"));
+        coin.classList.add("active_coin");
+    });
+});
