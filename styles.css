@@ -426,8 +426,8 @@ tr {
 
 .wheel_contanair {
     position: absolute;
-    width: 330px;
-    height: 330px;
+    width: 380px;
+    height: 380px;
     top: 17%;
     align-items: center;
     display: flex;

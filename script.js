@@ -104,14 +104,10 @@ window.onload = function() {
         setInterval(rotateDiv, 60000); // Then repeat every 1 second
     }, 60000);
 
-    setTimeout(() => {
-        timmer()
-        setInterval(timmer, 20000); // Then repeat every 1 second
-    });
 };
 
 
 
 
 
-///////////////////////////////////// Timmer //////////////////////////////////////////////////
+//////////////////////////////////// full screen mode ////////////////////////////////////

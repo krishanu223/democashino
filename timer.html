@@ -34,7 +34,6 @@
             border-radius: 50%;
             top: -140px;
             left: 19px;
-            background: conic-gradient(rgba(9, 255, 0, 0.597) 40deg, rgba(255, 255, 255, 0)0deg);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -64,6 +63,15 @@
         </div>
     </div>
 </body>
+
+<script>
+    let dial = document.querySelector('.dial2');
+    window.addEventListener('load', function() {
+        console.log('All assets are loaded');
+        dial.style.backgroundImage = 'conic-gradient(green 210deg, yellow 90deg, red 45deg )'
+    })
+</script>
+
 
 
 
