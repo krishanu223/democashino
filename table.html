@@ -143,11 +143,12 @@
                 } else {
                     box.dataset.value = currentValue + selectedCoinValue;
 
-                    // Check if the box value is greater than 5 (max available image)
-                    if (box.dataset.value <= 5) {
+                    // If the value is between 1 and 5, set the corresponding image
+                    if (box.dataset.value >= 1 && box.dataset.value <= 5) {
                         box.style.backgroundImage = `url('./images/chip${box.dataset.value}.png')`;
                     } else {
-                        box.style.backgroundImage = 'none'; // or you can set a default image
+                        // If the value exceeds 5, set a default image or none
+                        box.style.backgroundImage = 'url("./images/default-chip.png")'; // Set your default image here
                     }
                 }
                 box.textContent = box.dataset.value;
@@ -155,6 +156,7 @@
                 alert("Please select a coin first!");
             }
         }
+
 
 
         document.querySelectorAll(".box").forEach((box) => {

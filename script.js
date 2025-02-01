@@ -33,7 +33,7 @@ const coinImages = {
 function updateBox(box) {
     if (selectedCoinValue !== null) {
         let currentValue = parseInt(box.dataset.value, 10) || 0;
-        let newValue = Math.min(currentValue + selectedCoinValue, 5); // Cap at 5
+        let newValue = Math.min(currentValue + selectedCoinValue, 500); // Cap at 5
         box.dataset.value = newValue;
         box.style.backgroundImage = coinImages[newValue];
         box.textContent = newValue;
@@ -41,6 +41,9 @@ function updateBox(box) {
         alert("Please select a coin first!");
     }
 }
+
+
+
 
 // Click event for individual boxes
 document.querySelectorAll(".box").forEach((box) => {
