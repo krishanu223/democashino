@@ -37,6 +37,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: 1s linear;
         }
         
         .Timmer_container .Time_display {
@@ -59,17 +60,30 @@
 
         </div>
         <div class="dial2">
-            <div class="Time_display">00</div>
+            <div class="Time_display"></div>
         </div>
     </div>
 </body>
 
 <script>
     let dial = document.querySelector('.dial2');
-    window.addEventListener('load', function() {
-        console.log('All assets are loaded');
-        dial.style.backgroundImage = 'conic-gradient(green 210deg, yellow 90deg, red 45deg )'
-    })
+    let Time = document.querySelector('.Time_display')
+    let deg = 0;
+    let time = 60;
+    let second = 0;
+
+    function degupdate() {
+
+
+        dial.style.backgroundImage = `conic-gradient(rgba(0,255,0,0.6) ${deg=deg+(360/time)}deg, rgba(0,0,0,0) 0deg )`
+        Time.innerHTML = second++;
+        if (second == 60) {
+            console.log("1 min");
+            deg = 0;
+            second = 0;
+        }
+    }
+    setInterval(degupdate, 1000);
 </script>
 
 

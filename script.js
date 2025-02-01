@@ -110,4 +110,22 @@ window.onload = function() {
 
 
 
-//////////////////////////////////// full screen mode ////////////////////////////////////
+//////////////////////////////////// Timer ////////////////////////////////////
+let dial = document.querySelector('.dial2');
+let Time = document.querySelector('.Time_display')
+let deg = 0;
+let time = 60;
+let second = 0;
+
+function degupdate() {
+
+
+    dial.style.backgroundImage = `conic-gradient(rgba(0,255,0,0.6) ${deg = deg + (360 / time)}deg, rgba(0,0,0,0) 0deg )`
+    Time.innerHTML = second++;
+    if (second == 60) {
+        console.log("1 min");
+        deg = 0;
+        second = 0;
+    }
+}
+setInterval(degupdate, 1000);
