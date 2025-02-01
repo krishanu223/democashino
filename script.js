@@ -5,91 +5,73 @@ console.log(sre)
 if (window.window.innerWidth < 1000) {
     notice.style.display = "flex"
 }
+
+///////////////////////////// Coin color //////////////////////////////////////////
+
 let selectedCoinValue = null;
 let selectedCoinImage = null;
 
-// Add event listeners to the coins
+// Coin selection logic
 document.querySelectorAll(".coin").forEach((coin) => {
     coin.addEventListener("click", () => {
         selectedCoinValue = parseInt(coin.dataset.value, 10);
-        selectedCoinImage = coin.style.backgroundImage; // Store the selected coin's image URL
-        console.log(`Selected Coin Value: ${selectedCoinValue}`);
-
-
+        selectedCoinImage = coin.style.backgroundImage;
+        console.log(`Selected Coin: ${selectedCoinValue}`);
     });
 });
 
-// Add event listeners to the divs
+// Coin image map
+const coinImages = {
+    1: "url('./images/chip.png')",
+    2: "url('./images/chip2.png')",
+    3: "url('./images/chip3.png')",
+    4: "url('./images/chip5.png')",
+    5: "url('./images/chip6.png')",
+};
+
+// Function to update a box's value & image
+function updateBox(box) {
+    if (selectedCoinValue !== null) {
+        let currentValue = parseInt(box.dataset.value, 10) || 0;
+        let newValue = Math.min(currentValue + selectedCoinValue, 5); // Cap at 5
+        box.dataset.value = newValue;
+        box.style.backgroundImage = coinImages[newValue];
+        box.textContent = newValue;
+    } else {
+        alert("Please select a coin first!");
+    }
+}
+
+// Click event for individual boxes
 document.querySelectorAll(".box").forEach((box) => {
-    box.addEventListener("click", () => {
-        if (selectedCoinValue !== null && selectedCoinImage !== null) {
-            if (box.style.backgroundImage === selectedCoinImage) {
-                // Increase value if the selected coin image already exists in the div
-                const currentValue = parseInt(box.textContent.replace('Value: ', ''), 10) || 0;
-                box.textContent = ` ${currentValue + selectedCoinValue}`;
-            } else {
-                // Set the div with the selected coin's image and value
-                box.style.backgroundImage = selectedCoinImage;
-                box.textContent = ` ${selectedCoinValue}`;
-            }
-        } else {
-            alert("Please select a coin first!");
-        }
-    });
+    box.addEventListener("click", () => updateBox(box));
 });
 
-// Row All button functionality
+// Row select button functionality
 document.querySelectorAll(".row-button").forEach((button) => {
     button.addEventListener("click", () => {
         const rowIndex = parseInt(button.dataset.row, 10);
         const startIndex = rowIndex * 4;
-        const rowDivs = document.querySelectorAll(".box");
-
-        if (selectedCoinImage !== null) {
-            for (let i = startIndex; i < startIndex + 4; i++) {
-                const div = rowDivs[i];
-                if (div.style.backgroundImage === selectedCoinImage) {
-                    // Increase value if the selected coin image already exists in the div
-                    const currentValue = parseInt(div.textContent.replace('Value: ', ''), 10) || 0;
-                    div.textContent = ` ${currentValue + selectedCoinValue}`;
-                } else {
-                    // Set the div with the selected coin's image and value
-                    div.style.backgroundImage = selectedCoinImage;
-                    div.textContent = ` ${selectedCoinValue}`;
-                }
+        document.querySelectorAll(".box").forEach((box, index) => {
+            if (index >= startIndex && index < startIndex + 4) {
+                updateBox(box);
             }
-        } else {
-            alert("Please select a coin first!");
-        }
+        });
     });
 });
 
-// Column All button functionality
+// Column select button functionality
 document.querySelectorAll(".col-button").forEach((button) => {
     button.addEventListener("click", () => {
         const colIndex = parseInt(button.dataset.col, 10);
-        const colDivs = document.querySelectorAll(".box");
-
-        if (selectedCoinImage !== null) {
-            for (let i = colIndex; i < colDivs.length; i += 4) {
-                const div = colDivs[i];
-                if (div.style.backgroundImage === selectedCoinImage) {
-                    // Increase value if the selected coin image already exists in the div
-                    const currentValue = parseInt(div.textContent.replace('Value: ', ''), 10) || 0;
-                    div.textContent = ` ${currentValue + selectedCoinValue}`;
-                } else {
-                    // Set the div with the selected coin's image and value
-                    div.style.backgroundImage = selectedCoinImage;
-                    div.textContent = ` ${selectedCoinValue}`;
-                }
+        document.querySelectorAll(".box").forEach((box, index) => {
+            if (index % 4 === colIndex) {
+                updateBox(box);
             }
-        } else {
-            alert("Please select a coin first!");
-        }
+        });
     });
 });
 
-// Get Values button functionality
 
 
 /////////////////////////////////////   Roation ///////////////////////////////////////////////

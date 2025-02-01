@@ -382,6 +382,9 @@ tr {
     cursor: pointer;
     background-size: cover;
     background-position: center;
+    font-family: Roboto Condensed;
+    font-size: 1.5rem;
+    font-weight: 500;
     border: none;
     outline: none;
     border-radius: 50%;

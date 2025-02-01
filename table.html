@@ -4,16 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Div Value Chart</title>
+    <title>Dynamic Coin Update</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f8e3a1;
         }
         
         #coins {
             margin-bottom: 20px;
             display: flex;
             gap: 10px;
+            justify-content: center;
         }
         
         .coin {
@@ -30,50 +33,36 @@
             display: grid;
             grid-template-rows: auto auto;
             gap: 10px;
+            justify-content: center;
         }
         
         #column-buttons {
-            margin-left: 7%;
-            display: grid;
-            grid-template-columns: repeat(4, 50px);
+            display: flex;
             gap: 10px;
+            justify-content: center;
         }
         
-        .col-button {
-            width: 50px;
-            height: 30px;
+        .col-button,
+        .row-button {
+            padding: 5px 10px;
             cursor: pointer;
             background-color: #4CAF50;
             color: white;
             border: none;
             border-radius: 4px;
-            text-align: center;
+            font-size: 14px;
         }
         
         #divs {
             display: grid;
-            grid-template-columns: 50px 50px 50px 50px 50px;
+            grid-template-columns: auto repeat(4, 60px);
             gap: 10px;
-        }
-        
-        .row-button {
-            width: 50px;
-            margin-right: 10px;
-            height: 50px;
-            cursor: pointer;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
             justify-content: center;
-            grid-column: 1 / span 1;
         }
         
         .box {
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -82,168 +71,118 @@
             cursor: pointer;
             background-size: cover;
             background-position: center;
-        }
-        
-        #get-value-button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            cursor: pointer;
-            background-color: #2196F3;
-            color: white;
-            border: none;
-            border-radius: 5px;
-        }
-        
-        #selected-values {
-            margin-top: 20px;
             font-size: 16px;
-            color: #333;
+            font-weight: bold;
+            color: white;
+            text-shadow: 1px 1px 2px black;
         }
     </style>
 </head>
 
 <body>
+
+    <h2>Dynamic Coin Value Update</h2>
+
     <div id="coins">
-        <button class="coin" data-value="1" style="background-image: url('./images/chip.png');">1</button>
-        <button class="coin" data-value="2" style="background-image: url('./images/chip2.png');">2</button>
-        <button class="coin" data-value="3" style="background-image: url('./images//chip3.png');">3</button>
-        <button class="coin" data-value="4" style="background-image: url('./images/chip4.png');">4</button>
-        <button class="coin" data-value="5" style="background-image: url('./images/chip6.png');">5</button>
+        <button class="coin" data-value="1" style="background-image: url('./images/chip1.png');"></button>
+        <button class="coin" data-value="2" style="background-image: url('./images/chip2.png');"></button>
+        <button class="coin" data-value="3" style="background-image: url('./images/chip3.png');"></button>
+        <button class="coin" data-value="4" style="background-image: url('./images/chip4.png');"></button>
+        <button class="coin" data-value="5" style="background-image: url('./images/chip5.png');"></button>
+    </div>
+
+    <div id="column-buttons">
+        <button class="col-button" data-col="0">All Col 1</button>
+        <button class="col-button" data-col="1">All Col 2</button>
+        <button class="col-button" data-col="2">All Col 3</button>
+        <button class="col-button" data-col="3">All Col 4</button>
     </div>
 
     <div id="grid-container">
-        <!-- Column Buttons -->
-        <div id="column-buttons">
-            <button class="col-button" data-col="0">All Col 1</button>
-            <button class="col-button" data-col="1">All Col 2</button>
-            <button class="col-button" data-col="2">All Col 3</button>
-            <button class="col-button" data-col="3">All Col 4</button>
-        </div>
-
-        <!-- Grid with Row Buttons -->
         <div id="divs">
             <button class="row-button" data-row="0">All Row 1</button>
-            <div class="box" data-index="0">0</div>
-            <div class="box" data-index="1">1</div>
-            <div class="box" data-index="2">2</div>
-            <div class="box" data-index="3">3</div>
+            <div class="box" data-value="0"></div>
+            <div class="box" data-value="0"></div>
+            <div class="box" data-value="0"></div>
+            <div class="box" data-value="0"></div>
 
             <button class="row-button" data-row="1">All Row 2</button>
-            <div class="box" data-index="4">4</div>
-            <div class="box" data-index="5">5</div>
-            <div class="box" data-index="6">6</div>
-            <div class="box" data-index="7">7</div>
+            <div class="box" data-value="0"></div>
+            <div class="box" data-value="0"></div>
+            <div class="box" data-value="0"></div>
+            <div class="box" data-value="0"></div>
 
             <button class="row-button" data-row="2">All Row 3</button>
-            <div class="box" data-index="8">8</div>
-            <div class="box" data-index="9">9</div>
-            <div class="box" data-index="10">10</div>
-            <div class="box" data-index="11">11</div>
+            <div class="box" data-value="0"></div>
+            <div class="box" data-value="0"></div>
+            <div class="box" data-value="0"></div>
+            <div class="box" data-value="0"></div>
         </div>
     </div>
 
-    <button id="get-value-button">Get Values</button>
-    <div id="selected-values"></div>
-
     <script>
         let selectedCoinValue = null;
-        let selectedCoinImage = null;
 
-        // Add event listeners to the coins
         document.querySelectorAll(".coin").forEach((coin) => {
             coin.addEventListener("click", () => {
                 selectedCoinValue = parseInt(coin.dataset.value, 10);
-                selectedCoinImage = coin.style.backgroundImage; // Store the selected coin's image URL
-                console.log(`Selected Coin Value: ${selectedCoinValue}`);
             });
         });
 
-        // Add event listeners to the divs
-        document.querySelectorAll(".box").forEach((box) => {
-            box.addEventListener("click", () => {
-                if (selectedCoinValue !== null && selectedCoinImage !== null) {
-                    if (box.style.backgroundImage === selectedCoinImage) {
-                        // Increase value if the selected coin image already exists in the div
-                        const currentValue = parseInt(box.textContent.replace('Value: ', ''), 10) || 0;
-                        box.textContent = ` ${currentValue + selectedCoinValue}`;
-                    } else {
-                        // Set the div with the selected coin's image and value
-                        box.style.backgroundImage = selectedCoinImage;
-                        box.textContent = ` ${selectedCoinValue}`;
-                    }
+        function getMaxValue() {
+            return Math.max(...Array.from(document.querySelectorAll(".box"), box => parseInt(box.dataset.value, 10)));
+        }
+
+        function updateBox(box) {
+            if (selectedCoinValue !== null) {
+                let currentValue = parseInt(box.dataset.value, 10);
+                let maxValue = getMaxValue();
+
+                if (currentValue === maxValue) {
+                    box.dataset.value = currentValue + 1;
                 } else {
-                    alert("Please select a coin first!");
+                    box.dataset.value = currentValue + selectedCoinValue;
+
+                    // Check if the box value is greater than 5 (max available image)
+                    if (box.dataset.value <= 5) {
+                        box.style.backgroundImage = `url('./images/chip${box.dataset.value}.png')`;
+                    } else {
+                        box.style.backgroundImage = 'none'; // or you can set a default image
+                    }
                 }
-            });
+                box.textContent = box.dataset.value;
+            } else {
+                alert("Please select a coin first!");
+            }
+        }
+
+
+        document.querySelectorAll(".box").forEach((box) => {
+            box.addEventListener("click", () => updateBox(box));
         });
 
-        // Row All button functionality
         document.querySelectorAll(".row-button").forEach((button) => {
             button.addEventListener("click", () => {
-                const rowIndex = parseInt(button.dataset.row, 10);
-                const startIndex = rowIndex * 4;
-                const rowDivs = document.querySelectorAll(".box");
-
-                if (selectedCoinImage !== null) {
-                    for (let i = startIndex; i < startIndex + 4; i++) {
-                        const div = rowDivs[i];
-                        if (div.style.backgroundImage === selectedCoinImage) {
-                            // Increase value if the selected coin image already exists in the div
-                            const currentValue = parseInt(div.textContent.replace('Value: ', ''), 10) || 0;
-                            div.textContent = ` ${currentValue + selectedCoinValue}`;
-                        } else {
-                            // Set the div with the selected coin's image and value
-                            div.style.backgroundImage = selectedCoinImage;
-                            div.textContent = ` ${selectedCoinValue}`;
-                        }
+                let rowIndex = parseInt(button.dataset.row, 10) * 4;
+                document.querySelectorAll(".box").forEach((box, index) => {
+                    if (index >= rowIndex && index < rowIndex + 4) {
+                        updateBox(box);
                     }
-                } else {
-                    alert("Please select a coin first!");
-                }
+                });
             });
         });
 
-        // Column All button functionality
         document.querySelectorAll(".col-button").forEach((button) => {
             button.addEventListener("click", () => {
-                const colIndex = parseInt(button.dataset.col, 10);
-                const colDivs = document.querySelectorAll(".box");
-
-                if (selectedCoinImage !== null) {
-                    for (let i = colIndex; i < colDivs.length; i += 4) {
-                        const div = colDivs[i];
-                        if (div.style.backgroundImage === selectedCoinImage) {
-                            // Increase value if the selected coin image already exists in the div
-                            const currentValue = parseInt(div.textContent.replace('Value: ', ''), 10) || 0;
-                            div.textContent = ` ${currentValue + selectedCoinValue}`;
-                        } else {
-                            // Set the div with the selected coin's image and value
-                            div.style.backgroundImage = selectedCoinImage;
-                            div.textContent = ` ${selectedCoinValue}`;
-                        }
+                let colIndex = parseInt(button.dataset.col, 10);
+                document.querySelectorAll(".box").forEach((box, index) => {
+                    if (index % 4 === colIndex) {
+                        updateBox(box);
                     }
-                } else {
-                    alert("Please select a coin first!");
-                }
+                });
             });
-        });
-
-        // Get Values button functionality
-        document.getElementById("get-value-button").addEventListener("click", () => {
-            const values = [];
-            document.querySelectorAll(".box").forEach((box, index) => {
-                if (box.style.backgroundImage) {
-                    values.push(`Div ${index}: ${box.textContent}`); // Show the div's value
-                }
-            });
-
-            const selectedValues = values.length ?
-                values.join(", ") :
-                "No values selected.";
-            document.getElementById("selected-values").innerHTML = `Selected Values: ${selectedValues}`;
         });
     </script>
-
 </body>
 
 </html>
