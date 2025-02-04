@@ -1,15 +1,57 @@
 let notice = document.querySelector('.notice');
 let coins = document.querySelectorAll('.coin')
-let sre = window.innerWidth
+let sre = window.innerWidth;
+let Bet = document.querySelector('.bet_button')
+let Box = document.querySelectorAll('.bet_amount_Input')
+let pn = document.querySelector('.points')
+let clear = document.querySelector('.clear_button')
 console.log(sre)
 if (window.window.innerWidth < 1000) {
     notice.style.display = "flex"
 }
+let bqr = 5;
+var y = 0;
+
+pn.innerHTML = bqr;
+
+clear.addEventListener("click", () => {
+    Box.forEach((Box) => {
+        Box.dataset.value = 0;
+        Box.style.backgroundImage = "none";
+        Box.innerHTML = ""
+
+    })
+})
+
+
+
+
+Bet.addEventListener('click', () => {
+
+    Box.forEach((Box) => {
+
+        let x = Number(Box.innerHTML);
+        y = x + y
+    })
+    if (y >= bqr) {
+        alert("Blance are low")
+        y = 0;
+    } else {
+        pn.innerHTML = bqr - y
+        y = 0;
+    }
+
+})
+
+
+
 
 ///////////////////////////// Coin color //////////////////////////////////////////
 
 let selectedCoinValue = null;
 let selectedCoinImage = null;
+
+
 
 // Coin selection logic
 document.querySelectorAll(".coin").forEach((coin) => {
@@ -27,6 +69,8 @@ const coinImages = {
     3: "url('./images/chip3.png')",
     4: "url('./images/chip5.png')",
     5: "url('./images/chip6.png')",
+    6: "url('./images/chip4.png')",
+    7: "url('./images/chip7.png')",
 };
 
 // Function to update a box's value & image
@@ -45,10 +89,17 @@ function updateBox(box) {
 
 
 
+
+
 // Click event for individual boxes
 document.querySelectorAll(".box").forEach((box) => {
-    box.addEventListener("click", () => updateBox(box));
+    box.addEventListener("click", () => {
+        updateBox(box);
+    })
+
 });
+
+
 
 // Row select button functionality
 document.querySelectorAll(".row-button").forEach((button) => {
@@ -99,6 +150,8 @@ window.onload = function() {
 
 
 //////////////////////////////////// Timer ////////////////////////////////////
+
+
 let dial = document.querySelector('.dial2');
 let Time = document.querySelector('.Time_display')
 let deg = 0;
