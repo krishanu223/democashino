@@ -5,6 +5,8 @@ let Bet = document.querySelector('.bet_button')
 let Box = document.querySelectorAll('.bet_amount_Input')
 let pn = document.querySelector('.points')
 let clear = document.querySelector('.clear_button')
+let Date_time = document.querySelector('.Date_time')
+let Draw_time = document.querySelector('.Draw_time')
 console.log(sre)
 if (window.window.innerWidth < 1000) {
     notice.style.display = "flex"
@@ -28,20 +30,22 @@ clear.addEventListener("click", () => {
 
 Bet.addEventListener('click', () => {
 
-    Box.forEach((Box) => {
+        Box.forEach((Box) => {
 
-        let x = Number(Box.innerHTML);
-        y = x + y
+            let x = Number(Box.innerHTML);
+            y = x + y
+        })
+        if (y >= bqr) {
+            alert("Blance are low")
+            y = 0;
+        } else {
+            pn.innerHTML = bqr - y
+            y = 0;
+        }
+
     })
-    if (y >= bqr) {
-        alert("Blance are low")
-        y = 0;
-    } else {
-        pn.innerHTML = bqr - y
-        y = 0;
-    }
+    //////////////////////////////////////   Date and time /////////////////////////////
 
-})
 
 
 
@@ -136,8 +140,26 @@ function rotateDiv() {
 
 
 
+function Updatedate() {
+    let Current_time = new Date().toLocaleString();
+    Date_time.innerHTML = Current_time;
+}
+
+
+function DrawTime() {
+    let hour = new Date().getHours();
+    let minute = new Date().getMinutes() + 1;
+
+    Draw_time.innerHTML = "Draw_Time" + ":" + hour + ":" + minute
+
+}
+
+
 window.onload = function() {
 
+
+    setInterval(Updatedate, 1000);
+    setInterval(DrawTime, 1000);
     setTimeout(() => {
         rotateDiv()
         setInterval(rotateDiv, 60000); // Then repeat every 1 second
@@ -180,3 +202,9 @@ coins.forEach(coin => {
         coin.classList.add("active_coin");
     });
 });
+
+
+
+function closeWindow() {
+    window.close(); // Works only if opened by `window.open()`
+}

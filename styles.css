@@ -131,6 +131,7 @@ header {
     position: absolute;
     object-fit: cover;
     left: 90%;
+    cursor: pointer;
 }
 
 .close img {
