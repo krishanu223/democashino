@@ -28,7 +28,7 @@ header {
     width: 12vw;
     margin: .2rem;
     color: yellow;
-    font-size: .8rem;
+    font-size: 1rem;
     text-align: left;
     background: linear-gradient(0deg, rgb(10, 10, 10) 17%, rgb(164, 13, 13) 100%);
 }
@@ -354,10 +354,20 @@ tr {
 #coins {
     margin-bottom: 20px;
     display: flex;
-    gap: 10px;
+    gap: 15px;
     position: absolute;
     top: 85%;
-    left: 15%;
+    left: 12%;
+}
+
+.Date_time {
+    position: relative;
+    font-size: 1.5rem;
+    font-family: 'Roboto Condensed';
+    font-weight: 600;
+    left: 69%;
+    top: -26%;
+    display: inline;
 }
 
 .box {
@@ -365,8 +375,10 @@ tr {
     width: 53px;
     font-weight: 600;
     height: 48px;
-    color: red;
+    color: rgb(0, 0, 0);
     display: flex;
+    font-size: 1.5rem;
+    font-family: Roboto Condensed;
     align-items: center;
     justify-content: center;
     border: 2px solid #ff0000;
@@ -440,7 +452,7 @@ tr {
     position: absolute;
     width: 380px;
     height: 380px;
-    top: 10%;
+    top: 11%;
     align-items: center;
     display: flex;
     left: 63%;
@@ -463,8 +475,8 @@ tr {
 }
 
 .Timmer_container {
-    width: 150px;
-    height: 150px;
+    width: 110px;
+    height: 110px;
     border-radius: 50%;
     background-color: rgb(84, 84, 84);
 }
@@ -479,8 +491,8 @@ tr {
     background-position-x: -6px;
     background-position-y: -1px;
     position: relative;
-    top: 14px;
-    left: 16px;
+    top: 11px;
+    left: 12px;
 }
 
 .Timmer_container .dial2 {
@@ -488,8 +500,8 @@ tr {
     height: 80%;
     position: relative;
     border-radius: 50%;
-    top: -106px;
-    left: 15px;
+    top: -77px;
+    left: 11px;
     background: conic-gradient(rgba(9, 255, 0, 0.597) 250deg, rgba(255, 255, 255, 0) 0deg);
     display: flex;
     align-items: center;
@@ -514,7 +526,7 @@ tr {
     align-items: center;
     font-weight: 300;
     justify-content: center;
-    font-size: 5rem;
+    font-size: 3.5rem;
     font-family: 'DigitalClock';
 }
 
@@ -562,7 +574,7 @@ tr {
 }
 
 .buttonsec {
-    width: 13vw;
+    width: 10%;
     height: 15%;
     position: relative;
     top: 83%;
@@ -643,7 +655,7 @@ tr {
 
 .action_button {
     position: absolute;
-    width: 14%;
+    width: 13%;
     top: 79%;
     display: flex;
     left: 63%;
@@ -657,7 +669,7 @@ tr {
 .clear_button {
     width: 100%;
     height: 33%;
-    border: 5px solid rgb(255 73 0 / 94%);
+    border: 5px solid rgba(227, 223, 0, 0.864);
     margin: 3px;
     border-radius: 5px;
     box-shadow: 1px 3px 5px 1px;
@@ -667,7 +679,7 @@ tr {
 
 #app_timmer {
     position: absolute;
-    top: 76%;
+    top: 81%;
     left: 80%;
     background-color: #515151;
     border-radius: 50%;
@@ -704,6 +716,11 @@ tr {
     background-image: url("./images/wheelbacck.png");
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.Draw_time {
+    top: 47%;
+    left: 60%;
 }
 
 .container {

@@ -18,7 +18,7 @@ clear.addEventListener("click", () => {
     Box.forEach((Box) => {
         Box.dataset.value = 0;
         Box.style.backgroundImage = "none";
-        Box.innerHTML = ""
+        Box.innerHTML = "Play"
 
     })
 })
