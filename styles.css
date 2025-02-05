@@ -122,9 +122,16 @@
     }
     
     .miniimg {
+        width: 35px;
         position: absolute;
-        top: 0.4rem;
-        left: 88%;
+        top: 0.2rem;
+        left: 92%;
+    }
+    
+    .miniimg img span {
+        width: 30px;
+        height: 8px;
+        background-color: white;
     }
     
     .pointer_wheel {
@@ -147,7 +154,7 @@
     .close {
         position: absolute;
         object-fit: cover;
-        left: 90%;
+        left: 96%;
         cursor: pointer;
     }
     
