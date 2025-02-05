@@ -390,8 +390,8 @@
         font-size: 1.5rem;
         font-family: 'Roboto Condensed';
         font-weight: 600;
-        left: 69%;
-        top: -26%;
+        left: 71%;
+        top: -29%;
         display: inline;
     }
     
@@ -428,6 +428,14 @@
         box-shadow: 0px 2px 12px;
         background-color: transparent;
         color: white;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .inner {
+        position: absolute;
+        color: #05ff05;
+        transform: rotate(-0deg);
     }
     
     .clear_button {
@@ -489,35 +497,43 @@
         position: absolute;
         font-size: 1.5rem;
         font-weight: 600;
-        top: 28%;
+        top: 18%;
+        width: 50px;
+        cursor: pointer;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        border-radius: 50%;
     }
     
     .num0 {
-        left: 5%;
+        left: 2%;
     }
     
     .num1 {
-        left: 19%;
+        left: 16.5%;
     }
     
     .num2 {
-        left: 34%;
+        left: 31%;
     }
     
     .num3 {
-        left: 48%;
+        left: 46%;
     }
     
     .num4 {
-        left: 63%;
+        left: 60.5%;
     }
     
     .num5 {
-        left: 76%;
+        left: 75%;
     }
     
     .num6 {
-        left: 91%;
+        left: 90%;
     }
     
     .inner {
@@ -532,10 +548,10 @@
         position: absolute;
         width: 380px;
         height: 380px;
-        top: 11%;
+        top: 12%;
         align-items: center;
         display: flex;
-        left: 63%;
+        left: 65%;
         justify-content: center;
         background-image: url(./images/wheelfra2.png);
         background-size: 107%;
@@ -663,6 +679,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        font-size: 1.2rem;
         justify-content: center;
         gap: 5px;
     }
@@ -741,7 +758,9 @@
         left: 70%;
         flex-direction: column;
         height: 19%;
+        font-size: 1.2rem;
         font-family: Roboto Condensed;
+        font-weight: 500;
     }
     
     .bet_button,
@@ -799,8 +818,19 @@
     }
     
     .Draw_time {
-        top: 47%;
-        left: 60%;
+        top: 46%;
+        left: 66%;
+    }
+    
+    .info {
+        position: relative;
+        float: right;
+        margin: 5px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-image: url(./images/iicon.png);
+        background-size: cover;
     }
     
     .container {

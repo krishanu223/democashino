@@ -57,14 +57,20 @@ let selectedCoinImage = null;
 
 
 
+
+
 // Coin selection logic
-document.querySelectorAll(".coin").forEach((coin) => {
+document.querySelectorAll(".coin ").forEach((coin) => {
     coin.addEventListener("click", () => {
         selectedCoinValue = parseInt(coin.dataset.value, 10);
         selectedCoinImage = coin.style.backgroundImage;
         console.log(`Selected Coin: ${selectedCoinValue}`);
     });
 });
+
+
+
+
 
 // Coin image map
 const coinImages = {
