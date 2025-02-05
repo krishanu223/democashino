@@ -427,6 +427,7 @@
         border-radius: 50%;
         box-shadow: 0px 2px 12px;
         background-color: transparent;
+        color: white;
     }
     
     .clear_button {
@@ -470,8 +471,61 @@
     }
     
     .active_coin {
-        transform: scale(1.1);
+        animation: rotateAnimation2 2s linear infinite;
         box-shadow: 0 0 10px 5px rgba(255, 215, 0, 0.8);
+    }
+    
+    @keyframes rotateAnimation2 {
+        from {
+            transform: rotate(0deg) scale(1.1);
+        }
+        to {
+            transform: rotate(360deg) scale(1.1);
+        }
+    }
+    
+    .num {
+        font-family: Roboto Condensed;
+        position: absolute;
+        font-size: 1.5rem;
+        font-weight: 600;
+        top: 28%;
+    }
+    
+    .num0 {
+        left: 5%;
+    }
+    
+    .num1 {
+        left: 19%;
+    }
+    
+    .num2 {
+        left: 34%;
+    }
+    
+    .num3 {
+        left: 48%;
+    }
+    
+    .num4 {
+        left: 63%;
+    }
+    
+    .num5 {
+        left: 76%;
+    }
+    
+    .num6 {
+        left: 91%;
+    }
+    
+    .inner {
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        transform: rotate(-360deg);
+        /* Counteracts parent's rotation */
     }
     
     .wheel_contanair {

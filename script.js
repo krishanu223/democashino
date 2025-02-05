@@ -30,21 +30,21 @@ clear.addEventListener("click", () => {
 
 Bet.addEventListener('click', () => {
 
-        Box.forEach((Box) => {
+    Box.forEach((Box) => {
 
-            let x = Number(Box.innerHTML);
-            y = x + y
-        })
-        if (y >= bqr) {
-            alert("Blance are low")
-            y = 0;
-        } else {
-            pn.innerHTML = bqr - y
-            y = 0;
-        }
-
+        let x = Number(Box.innerHTML);
+        y = x + y
     })
-    //////////////////////////////////////   Date and time /////////////////////////////
+    if (y >= bqr) {
+        alert("Blance are low")
+        y = 0;
+    } else {
+        pn.innerHTML = bqr - y
+        y = 0;
+    }
+
+})
+//////////////////////////////////////   Date and time /////////////////////////////
 
 
 
@@ -70,11 +70,11 @@ document.querySelectorAll(".coin").forEach((coin) => {
 const coinImages = {
     1: "url('./images/chip.png')",
     2: "url('./images/chip2.png')",
-    3: "url('./images/chip3.png')",
-    4: "url('./images/chip5.png')",
-    5: "url('./images/chip6.png')",
-    6: "url('./images/chip4.png')",
-    7: "url('./images/chip7.png')",
+    5: "url('./images/chip3.png')",
+    10: "url('./images/chip5.png')",
+    50: "url('./images/chip6.png')",
+    100: "url('./images/chip4.png')",
+    500: "url('./images/chip7.png')",
 };
 
 // Function to update a box's value & image
@@ -155,7 +155,7 @@ function DrawTime() {
 }
 
 
-window.onload = function() {
+window.onload = function () {
 
 
     setInterval(Updatedate, 1000);
