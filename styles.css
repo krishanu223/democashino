@@ -440,9 +440,9 @@
         position: relative;
         color: white;
         width: 23%;
-        top: 55%;
+        top: 53%;
         left: 40%;
-        height: 10%;
+        height: 12%;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -454,8 +454,8 @@
         text-align: center;
         border-radius: 5px;
         width: 95%;
-        height: 95%;
-        background: linear-gradient(0deg, rgb(113, 113, 113) 24%, rgb(51, 51, 51) 93%);
+        height: 92%;
+        background: linear-gradient(0deg, rgb(0, 0, 0) 24%, rgb(0, 0, 0) 93%);
     }
     
     .banner_wheel {
