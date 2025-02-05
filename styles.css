@@ -402,7 +402,7 @@
         height: 40px;
         color: rgb(0, 0, 0);
         display: flex;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         font-family: Roboto Condensed;
         align-items: center;
         justify-content: center;
@@ -551,7 +551,7 @@
         top: 12%;
         align-items: center;
         display: flex;
-        left: 65%;
+        left: 67%;
         justify-content: center;
         background-image: url(./images/wheelfra2.png);
         background-size: 107%;
