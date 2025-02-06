@@ -175,7 +175,7 @@
     .playing_table {
         position: absolute;
         margin: 5px;
-        width: 62%;
+        width: 66%;
         height: 62vh;
         background-image: linear-gradient( 305deg, hsl(60deg 76% 92%) 0%, hsl(58deg 73% 84%) 6%, hsl(57deg 72% 76%) 12%, hsl(56deg 73% 68%) 18%, hsl(55deg 74% 59%) 24%, hsl(53deg 79% 56%) 29%, hsl(50deg 85% 55%) 35%, hsl(48deg 91% 54%) 41%, hsl(46deg 97% 52%) 47%, hsl(44deg 97% 59%) 53%, hsl(45deg 88% 68%) 59%, hsl(47deg 77% 76%) 65%, hsl(49deg 60% 83%) 71%, hsl(50deg 36% 86%) 76%, hsl(48deg 38% 73%) 82%, hsl(46deg 39% 60%) 88%, hsl(45deg 43% 48%) 94%, hsl(45deg 79% 34%) 100%);
         border-radius: 7px;
@@ -221,7 +221,7 @@
     }
     
     .card {
-        width: 39%;
+        width: 36%;
         box-shadow: 0px 2px 6px 1px black;
         border-radius: 5px;
         margin-bottom: 10px;
@@ -235,7 +235,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 38vw;
+        width: 42vw;
         height: 14vh;
         background: linear-gradient( 305deg, hsl(60deg 76% 92%) 0%, hsl(58deg 73% 84%) 6%, hsl(57deg 72% 76%) 12%, hsl(56deg 73% 68%) 18%, hsl(55deg 74% 59%) 24%, hsl(53deg 79% 56%) 29%, hsl(50deg 85% 55%) 35%, hsl(48deg 91% 54%) 41%, hsl(46deg 97% 52%) 47%, hsl(44deg 97% 59%) 53%, hsl(45deg 88% 68%) 59%, hsl(47deg 77% 76%) 65%, hsl(49deg 60% 83%) 71%, hsl(50deg 36% 86%) 76%, hsl(48deg 38% 73%) 82%, hsl(46deg 39% 60%) 88%, hsl(45deg 43% 48%) 94%, hsl(45deg 79% 34%) 100%);
         ;
@@ -306,7 +306,7 @@
     }
     
     .card_rebon {
-        width: 20%;
+        width: 21%;
         height: 20%;
         position: absolute;
     }
@@ -319,7 +319,7 @@
     }
     
     .td_f_ig {
-        width: 100%;
+        width: 85%;
     }
     
     .time_res {
@@ -379,10 +379,10 @@
     #coins {
         margin-bottom: 20px;
         display: flex;
-        gap: 15px;
+        gap: 4px;
         position: absolute;
         top: 85%;
-        left: 12%;
+        left: 16%;
     }
     
     .Date_time {
@@ -390,16 +390,16 @@
         font-size: 1.5rem;
         font-family: 'Roboto Condensed';
         font-weight: 600;
-        left: 71%;
+        left: 75%;
         top: -29%;
         display: inline;
     }
     
     .box {
         position: absolute;
-        width: 46px;
+        width: 55px;
         font-weight: 600;
-        height: 40px;
+        height: 43px;
         color: rgb(0, 0, 0);
         display: flex;
         font-size: 1.2rem;
@@ -450,7 +450,7 @@
         color: white;
         width: 23%;
         top: 53%;
-        left: 40%;
+        left: 44%;
         height: 12%;
         display: flex;
         align-items: center;
@@ -464,7 +464,10 @@
         border-radius: 5px;
         width: 95%;
         height: 92%;
+        display: flex;
         background: linear-gradient(0deg, rgb(0, 0, 0) 24%, rgb(0, 0, 0) 93%);
+        justify-content: center;
+        align-items: center;
     }
     
     .banner_wheel {
@@ -521,19 +524,19 @@
     }
     
     .num3 {
-        left: 46%;
+        left: 45%;
     }
     
     .num4 {
-        left: 60.5%;
+        left: 59.5%;
     }
     
     .num5 {
-        left: 75%;
+        left: 74%;
     }
     
     .num6 {
-        left: 90%;
+        left: 88.5%;
     }
     
     .inner {
@@ -670,7 +673,7 @@
     }
     
     .buttonsec {
-        width: 10%;
+        width: 13%;
         height: 15%;
         position: relative;
         top: 83%;
