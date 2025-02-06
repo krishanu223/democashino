@@ -382,7 +382,7 @@
         gap: 4px;
         position: absolute;
         top: 85%;
-        left: 23%;
+        left: 20%;
     }
     
     .Date_time {
@@ -482,7 +482,7 @@
     }
     
     .active_coin {
-        animation: rotateAnimation2 2s linear infinite;
+        animation: rotateAnimation2 5s linear infinite;
         box-shadow: 0 0 10px 5px rgba(255, 215, 0, 0.8);
     }
     
