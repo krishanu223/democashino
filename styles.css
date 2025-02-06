@@ -349,11 +349,11 @@
     }
     
     .All_hearts {
-        width: 7%;
+        width: 6%;
         position: absolute;
         height: 11%;
         margin-top: 2%;
-        margin-left: -9%;
+        margin-left: -7%;
     }
     
     .circle {
@@ -382,7 +382,7 @@
         gap: 4px;
         position: absolute;
         top: 85%;
-        left: 16%;
+        left: 23%;
     }
     
     .Date_time {
@@ -465,7 +465,7 @@
         width: 95%;
         height: 92%;
         display: flex;
-        background: linear-gradient(0deg, rgb(0, 0, 0) 24%, rgb(0, 0, 0) 93%);
+        background: linear-gradient(0deg, rgb(63 62 62) 14%, rgb(0, 0, 0) 93%);
         justify-content: center;
         align-items: center;
     }
@@ -673,7 +673,7 @@
     }
     
     .buttonsec {
-        width: 13%;
+        width: 16%;
         height: 15%;
         position: relative;
         top: 83%;
@@ -782,7 +782,7 @@
     #app_timmer {
         position: absolute;
         top: 81%;
-        left: 85%;
+        left: 88%;
         background-color: #515151;
         border-radius: 50%;
         box-shadow: 0px 0px 5px;
@@ -822,7 +822,7 @@
     
     .Draw_time {
         top: 46%;
-        left: 66%;
+        left: 68%;
     }
     
     .info {
