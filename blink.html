@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blinking Card with Stop Feature</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        
+        input,
+        button {
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        
+        .card-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .card {
+            width: 80px;
+            height: 120px;
+            border: 2px solid black;
+            text-align: center;
+            font-size: 24px;
+            line-height: 120px;
+            background-color: white;
+            transition: background-color 0.3s;
+        }
+        
+        .blink {
+            animation: blink-animation 0.5s infinite alternate;
+        }
+        
+        @keyframes blink-animation {
+            0% {
+                background-color: yellow;
+            }
+            100% {
+                background-color: white;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Blinking Card with Stop Feature</h2>
+    <input type="text" id="cardInput" placeholder="Enter card name (e.g., jheart)">
+    <button onclick="startBlinking()">Start Blinking</button>
+    <button onclick="stopBlink()">Stop Blinking</button>
+
+    <div class="card-container" id="cardContainer"></div>
+
+    <script>
+        const cards = [{
+            id: "jheart",
+            symbol: "♥ J"
+        }, {
+            id: "jclub",
+            symbol: "♣ J"
+        }, {
+            id: "jspade",
+            symbol: "♠ J"
+        }, {
+            id: "jdiamond",
+            symbol: "♦ J"
+        }, {
+            id: "qheart",
+            symbol: "♥ Q"
+        }, {
+            id: "qclub",
+            symbol: "♣ Q"
+        }, {
+            id: "qspade",
+            symbol: "♠ Q"
+        }, {
+            id: "qdiamond",
+            symbol: "♦ Q"
+        }, {
+            id: "kheart",
+            symbol: "♥ K"
+        }, {
+            id: "kclub",
+            symbol: "♣ K"
+        }, {
+            id: "kspade",
+            symbol: "♠ K"
+        }, {
+            id: "kdiamond",
+            symbol: "♦ K"
+        }];
+
+        const cardContainer = document.getElementById("cardContainer");
+
+        // Dynamically create card elements
+        cards.forEach(card => {
+            const div = document.createElement("div");
+            div.classList.add("card");
+            div.id = card.id;
+            div.textContent = card.symbol;
+            cardContainer.appendChild(div);
+        });
+
+        let lastBlinkingCard = null;
+
+        function startBlinking() {
+            const cardName = document.getElementById("cardInput").value.trim().toLowerCase();
+            const cardElement = document.getElementById(cardName);
+
+            if (cardElement) {
+                // Stop previous blinking card
+                if (lastBlinkingCard) {
+                    lastBlinkingCard.classList.remove("blink");
+                }
+
+                // Delay before starting the blink
+                setTimeout(() => {
+                    cardElement.classList.add("blink");
+                    lastBlinkingCard = cardElement;
+                }, 1000); // 1 second delay
+            } else {
+                alert("Card not found!");
+            }
+        }
+
+        function stopBlink() {
+            if (lastBlinkingCard) {
+                lastBlinkingCard.classList.remove("blink");
+                lastBlinkingCard = null;
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -74,12 +74,12 @@
     }
     
     .welcome {
-        margin-left: 5vw;
+        margin-left: 13vw;
         font-weight: 600;
     }
     
     .codenum {
-        margin-left: 1vw;
+        margin-left: 10vw;
         font-weight: 600;
     }
     
@@ -227,6 +227,19 @@
         margin-bottom: 10px;
     }
     
+    .blink {
+        animation: blink-animation 0.3s infinite alternate;
+    }
+    
+    @keyframes blink-animation {
+        0% {
+            box-shadow: 0px 0px 10px 5px rgb(255, 0, 0);
+        }
+        100% {
+            box-shadow: 0px 0px 10px 5px rgb(72, 255, 0);
+        }
+    }
+    
     .history {
         border-radius: 3px;
         position: absolute;
@@ -309,6 +322,7 @@
         width: 21%;
         height: 20%;
         position: absolute;
+        display: block;
     }
     
     .head_select {
@@ -502,7 +516,7 @@
     .num {
         font-family: Roboto Condensed;
         position: absolute;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         font-weight: 600;
         top: 18%;
         width: 50px;
@@ -520,27 +534,31 @@
     }
     
     .num1 {
-        left: 16.5%;
+        left: 14.5%;
     }
     
     .num2 {
-        left: 31%;
+        left: 27%;
     }
     
     .num3 {
-        left: 45%;
+        left: 39%;
     }
     
     .num4 {
-        left: 59.5%;
+        left: 52.5%;
     }
     
     .num5 {
-        left: 74%;
+        left: 64%;
     }
     
     .num6 {
-        left: 88.5%;
+        left: 77.5%;
+    }
+    
+    .num7 {
+        left: 90%;
     }
     
     .inner {
@@ -655,7 +673,7 @@
     }
     
     .rotate {
-        transform: rotate(1545deg);
+        transform: rotate(1555deg);
     }
     
     .rotate2 {
@@ -796,7 +814,7 @@
         width: 4.5%;
         height: 23%;
         position: absolute;
-        margin-top: 8%;
+        margin-top: 6%;
         margin-left: -3%;
     }
     

@@ -25,11 +25,11 @@
         <span class="p">AC</span>
         <span class="p welcome">WELCOME</span>
         <span class="p codenum">1666895</span>
-        <div class="point">
+        <!--<div class="point">
             <span class="point_blance_lavel">POINTS BALANCE</span>
             <span> <img src="./images/balance_textbox.png" class="poimg"></span>
             <span class="points"></span>
-        </div>
+        </div>-->
         <div class="minimize"><img src="./images/minimizze.png" class="miniimg"> <span></span></div>
         <div class="close" onclick="closeWindow()"><img src="./images/close-icon-16.png">
         </div>
@@ -91,7 +91,7 @@
                                 </div>
                             </td>
                             <td>
-                                <div class="td2">
+                                <div class="td2" id="jh">
                                     <img class="td_f_img card" src="./images/JH.webp">
                                     <img class="card_rebon" src="./images/cardRibbon.png">
                                     <img class="card_rebon card_rebon2" src="./images/greenbanner.png">
@@ -99,7 +99,7 @@
                                 </div>
                             </td>
                             <td>
-                                <div class="td2">
+                                <div class="td2" id="js">
                                     <img class="td_f_img card" src="./images/JS.webp">
                                     <img class="card_rebon" src="./images/cardRibbon.png">
                                     <img class="card_rebon card_rebon2" src="./images/greenbanner.png">
@@ -108,7 +108,7 @@
             </div>
             </td>
             <td>
-                <div class="td2">
+                <div class="td2" id="jd">
                     <img class="td_f_img card" src="./images/JD.webp">
                     <img class="card_rebon" src="./images/cardRibbon.png">
                     <img class="card_rebon card_rebon2" src="./images/greenbanner.png">
@@ -117,7 +117,7 @@
         </div>
         </td>
         <td>
-            <div class="td2">
+            <div class="td2" id="jc">
                 <img class="td_f_img card" src="./images/JC.webp">
                 <img class="card_rebon" src="./images/cardRibbon.png">
                 <img class="card_rebon card_rebon2" src="./images/greenbanner.png">
@@ -136,7 +136,7 @@
                 </div>
             </td>
             <td>
-                <div class="td3">
+                <div class="td3" id="qh">
                     <img class="td_f_img card" src="./images/QH.webp">
                     <img class="card_rebon" src="./images/cardRibbon.png">
                     <img class="card_rebon card_rebon2" src="./images/greenbanner.png">
@@ -145,7 +145,7 @@
                 </div>
             </td>
             <td>
-                <div class="td3">
+                <div class="td3" id="qs">
                     <img class="td_f_img card" src="./images/QS.webp">
                     <img class="card_rebon" src="./images/cardRibbon.png">
                     <img class="card_rebon card_rebon2" src="./images/greenbanner.png">
@@ -154,7 +154,7 @@
                 </div>
             </td>
             <td>
-                <div class="td3">
+                <div class="td3" id="qd">
                     <img class="td_f_img card" src="./images/QD.webp">
                     <img class="card_rebon" src="./images/cardRibbon.png">
                     <img class="card_rebon card_rebon2" src="./images/greenbanner.png">
@@ -163,7 +163,7 @@
                 </div>
             </td>
             <td>
-                <div class="td3">
+                <div class="td3" id="qc">
                     <img class="td_f_img card" src="./images/QC.webp">
                     <img class="card_rebon" src="./images/cardRibbon.png">
                     <img class="card_rebon card_rebon2" src="./images/greenbanner.png">
@@ -182,7 +182,7 @@
                 </div>
             </td>
             <td>
-                <div class="td4">
+                <div class="td4" id="kh">
 
                     <img class="td_f_img card " src="./images/KH.webp">
                     <img class="card_rebon" src="./images/cardRibbon.png">
@@ -192,7 +192,7 @@
                 </div>
             </td>
             <td>
-                <div class="td4">
+                <div class="td4" id="ks">
                     <img class="td_f_img card " src="./images/KS.webp">
                     <img class="card_rebon" src="./images/cardRibbon.png">
                     <img class="card_rebon card_rebon2" src="./images/greenbanner.png">
@@ -201,7 +201,7 @@
                 </div>
             </td>
             <td>
-                <div class="td4">
+                <div class="td4" id="kd">
                     <img class="td_f_img card" src="./images/KD.webp">
                     <img class="card_rebon" src="./images/cardRibbon.png">
                     <img class="card_rebon card_rebon2" src="./images/greenbanner.png">
@@ -210,7 +210,7 @@
                 </div>
             </td>
             <td>
-                <div class="td4">
+                <div class="td4" id="kc">
                     <img class="td_f_img card" src="./images/KC.webp">
                     <img class="card_rebon" src="./images/cardRibbon.png">
                     <img class="card_rebon card_rebon2" src="./images/greenbanner.png">
@@ -308,11 +308,14 @@
             <span class="num num5">100</span>
             <button class="coin" data-value="500" style="background-image: url('./images/chip7.png');"></button>
             <span class="num num6">500</span>
+            <button class="coin" data-value="1000" style="background-image: url('./images/chip4.png');"></button>
+            <span class="num num7">1000</span>
+
         </div>
 
 
         <div class="buttonsec">
-            <div class="childsec">Balance:</div>
+            <div class="childsec Blance">Balance:</div>
             <div class="childsec">Play:</div>
             <div class="childsec">Win:</div>
         </div>
@@ -327,7 +330,6 @@
             <div class="wheel_circle">
                 <div class="wheel_circle contan_cir">
                     <div class="wheel_circle cir_main" id="outerDiv">
-
                     </div>
                     <div class="inner_cir" id="innerDiv"></div>
                 </div>
