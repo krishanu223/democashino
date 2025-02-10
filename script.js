@@ -11,8 +11,9 @@ let repeat = document.querySelector('.repeat_button');
 let card_image1 = document.querySelectorAll('.td2');
 //let redrebon = document.querySelector('.card_rebon');
 //let greenrebon = document.querySelector('.card_rebon2')
-
-
+const apiUrl_time = 'http://103.162.120.115/api/time.aspx?gameid=M01&requestkey=123456'; // 
+let Time_data;
+let leftTime;
 console.log(sre)
 if (window.window.innerWidth < 1000) {
     notice.style.display = "flex"
@@ -221,20 +222,26 @@ function rotateDiv(res1, res2) {
     document.getElementById("outerDiv").style.transform = `rotate(${RotatedVal}deg)`;
     document.getElementById("innerDiv").style.transform = `rotate(${RotatedVal2}deg)`;
     setTimeout(() => {
-        document.getElementById("outerDiv").style.transition = "0s";
-        document.getElementById("innerDiv").style.transition = "0s"
-        document.getElementById("outerDiv").style.transform = `rotate(${0}deg)`;
-        document.getElementById("innerDiv").style.transform = `rotate(${0}deg)`;
         selection_byid(res1, res2)
-    }, 7000);
+    }, 4000);
     console.log(RotatedVal2);
     console.log(RotatedVal)
 }
 
-repeat.addEventListener("click", () => {
-    rotateDiv(getRandomCard(), getRandomCard2())
+function startWheel() {
+    document.getElementById("outerDiv").style.transform = `rotate(${0}deg)`;
+    document.getElementById("innerDiv").style.transform = `rotate(${0}deg)`;
+    document.getElementById("outerDiv").style.transition = "0s";
+    document.getElementById("innerDiv").style.transition = "0s"
+    setTimeout(() => {
+        rotateDiv(getRandomCard(), getRandomCard2())
+    }, 10)
 
-})
+
+}
+
+
+
 /////////////////////////////////  random card selction //////////////////////////
 function getRandomCard() {
     const cards = ["k", "j", "q"];
@@ -247,33 +254,26 @@ function getRandomCard2() {
 }
 ////////////////////////////////////////////////////////////////////////////////
 function Updatedate() {
+
     let Current_time = new Date().toLocaleString();
-    Date_time.innerHTML = Current_time;
-}
-
-
-function DrawTime() {
-    let hour = new Date().getHours();
-    let minute = new Date().getMinutes() + 1;
-
-    Draw_time.innerHTML = "Draw_Time" + ":" + hour + ":" + minute
+    console.log(Time_data);
 
 }
 
 
 
-window.onload = function () {
-    setInterval(Updatedate, 1000);
-    setInterval(DrawTime, 1000);
-    setTimeout(() => {
-
-        // Then repeat every 1 second
-    }, 5000);
 
 
+window.onload = function() {
 
+    setInterval(fetchData, 1000);
 
-
+    setInterval(() => {
+        degupdate(leftTime)
+    }, 1000);
+    setInterval(() => {
+        startWheelatTime(leftTime)
+    }, 1000)
 
 };
 
@@ -287,21 +287,23 @@ window.onload = function () {
 let dial = document.querySelector('.dial2');
 let Time = document.querySelector('.Time_display')
 let deg = 0;
-let time = 60;
-let second = 0;
-
-function degupdate() {
+let Tieflag = false;
+let mainTime = 300;
 
 
-    dial.style.backgroundImage = `conic-gradient(rgba(0,255,0,0.6) ${deg = deg + (360 / time)}deg, rgba(0,0,0,0) 0deg )`
-    Time.innerHTML = second++;
-    if (second == 60) {
-        console.log("1 min");
+function degupdate(Time10) {
+    deg = (mainTime - Time10) * 1.22;
+    dial.style.backgroundImage = `conic-gradient(rgba(0,255,0,0.6) ${deg}deg, rgba(0,0,0,0) 0deg )`
+    Time.innerHTML = Time10;
+    if ((300 - Time10) == 300) {
+        console.log("5 min");
         deg = 0;
-        second = 0;
+
     }
+
 }
-setInterval(degupdate, 1000);
+
+
 
 ////////////////////////////////////////   coin event ////////////////////////////////////
 
@@ -325,15 +327,17 @@ function selection_byid(resid, resid2) {
 
 
     console.log(check_cardres)
-    //////////////////////////////////////   reset all div   /////////////////////////
+        //////////////////////////////////////   reset all div   /////////////////////////
     if (check_cardres) {
         let card_image = check_cardres.querySelector('.card');
         card_image.classList.remove('blink')
-        stopBlinking()
+        stopBlinking();
+        let card_rebon = check_cardres.querySelector(".card_rebon");
+        let card_rebon2 = check_cardres.querySelector(".card_rebon2")
+        card_rebon.style.display = "block";
+        card_rebon2.style.display = "none"
 
     }
-
-
 
     let card_result = document.getElementById(`${resid + resid2}`);
     check_cardres = card_result;
@@ -373,4 +377,57 @@ function stopBlinking() {
         clearInterval(intervalId);
         intervalId = null; // Reset interval ID
     }
+}
+
+function convertToDate(timeStr) {
+    let today = new Date(); // Get today's date
+    let [time, modifier] = timeStr.split(" "); // Split time & AM/PM
+    let [hours, minutes, seconds] = time.split(":").map(Number);
+
+    if (modifier === "PM" && hours !== 12) hours += 12;
+    if (modifier === "AM" && hours === 12) hours = 0;
+
+    return new Date(today.getFullYear(), today.getMonth(), today.getDate(), hours, minutes, seconds);
+}
+
+/////////////////////////////////////   featching Datetime  ///////////////////////////////
+
+function fetchData() {
+    fetch(apiUrl_time)
+        .then(response => response.json())
+        .then(data => {
+
+            let time = data[0];
+            Time_data = time;
+
+            let dateTime = time.NEXTDRAW;
+            let extractedDate = dateTime.match(/^\d{2}-[A-Za-z]{3}-\d{2}/)[0];
+            Date_time.innerHTML = extractedDate + " " + time.TARMINALTIME;
+            let extractedTime = dateTime.match(/\d{1,2}:\d{2}:\d{2} [APM]{2}/)[0];
+            Draw_time.innerHTML = "Draw_Time" + ":" + extractedTime;
+            let diffInSeconds = Math.abs((convertToDate(extractedTime) - convertToDate(time.TARMINALTIME)) / 1000);
+            leftTime = diffInSeconds
+
+
+        })
+        .catch(error => {
+            console.error('Error fetching data:', error);
+            Date_time.innerHTML = "--:---:----" + "--:--:--";
+            Draw_time.innerHTML = "Draw_Time" + ":" + "--:--:--"
+        });
+}
+
+// Set an interval to call fetchData every 100 milliseconds
+
+
+///////////////////////////////////////   Time To rotated while  ///////////////////////////
+
+
+function startWheelatTime(lefttime) {
+
+    if (lefttime == 0) {
+        startWheel()
+    }
+
+
 }
