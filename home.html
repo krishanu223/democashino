@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JETTO JOKER</title>
+</head>
+<link href="./styles.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Rokkitt:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<script src="JSPrintManager.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/SheetJS/js-codepage/dist/cptable.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/SheetJS/js-codepage/dist/cputils.js"></script>
+
+
+
+<body>
+
+    <header>
+        <span class="lobby">LOBBY</span>
+        <span class="jetojok lobby">JEETO JOKER</span>
+        <span class="checkb1"></span>
+        <span class="p">P</span>
+        <span class="checkb2"></span>
+        <span class="claim">CLAIM</span>
+        <span class=" checkb1 checkb3"></span>
+        <span class="p">AC</span>
+        <span class="p welcome">WELCOME</span>
+        <span class="p codenum">1666895</span>
+
+        <div class="minimize"><img src="./images/minimizze.png" class="miniimg"> <span></span></div>
+        <div class="close" onclick="closeWindow()"><img src="./images/close-icon-16.png">
+        </div>
+    </header>
+    <main>
+        <div id="close_select"> <select id="printerSelect"></select> <img id="cross_p" src="./images/close-icon-16.png" width="40px" height="40px"></div>
+
+        <div class="info"></div>
+        <div class="print"></div>
+        <div class="playing_table">
+            <div class="main_table">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="td1 td11">
+                                    <img class="td_f_ig2 td_f_img" src="./images/minmax.png">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td1">
+                                    <div class="circle col-button" data-col="0"><span>Play</span>
+                                    </div>
+                                    <img class="All_hearts" src="./images/hearts1.png">
+                                    <div class="head_select">All Hearts</div>
+                                    <img class="td_f_ig td_f_img" src="./images/downloqder.png">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td1">
+                                    <div class="circle col-button" data-col="1"><span>Play</span></div>
+                                    <img class="All_hearts" src="./images/speads.png">
+                                    <div class="head_select">All Speads</div>
+                                    <img class="td_f_ig td_f_img" src="./images/downloqder.png">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td1">
+                                    <div class="circle col-button" data-col="2"><span>Play</span></div>
+                                    <img class="All_hearts All_Dia" src="./images/diamond.png">
+                                    <div class="head_select">All Diamonds</div>
+                                    <img class="td_f_ig td_f_img" src="./images/downloqder.png">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td1">
+                                    <div class="circle col-button" data-col="3"><span>Play</span></div>
+                                    <img class="All_hearts" src="./images/club.png">
+                                    <div class="head_select">All Club</div>
+                                    <img class="td_f_ig td_f_img" src="./images/downloqder.png">
+                                </div>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="td2">
+                                    <div class="circle row-button" data-row="0"><span>Play</span></div>
+                                    <div class="All_jacks">J</div>
+                                    <div class="head_select">All Jacks</div>
+                                    <img class="td_f_ig td_f_img" src="./images/downloqder.png">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td2" id="jh">
+                                    <img class="td_f_img card" src="./images/JH.webp">
+                                    <img class="card_rebon" src="./images/redrebon-min.png">
+                                    <img class="card_rebon card_rebon2" src="./images/bluerebon-min.png">
+                                    <div class="box bet_amount_Input" data-index="0">Play</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td2" id="js">
+                                    <img class="td_f_img card" src="./images/JS.webp">
+                                    <img class="card_rebon" src="./images/redrebon-min.png">
+                                    <img class="card_rebon card_rebon2" src="./images/bluerebon-min.png">
+                                    <div class="box bet_amount_Input" data-index="1">Play</div>
+                                </div>
+            </div>
+            </td>
+            <td>
+                <div class="td2" id="jd">
+                    <img class="td_f_img card" src="./images/JD.webp">
+                    <img class="card_rebon" src="./images/redrebon-min.png">
+                    <img class="card_rebon card_rebon2" src="./images/bluerebon-min.png">
+                    <div class="box bet_amount_Input" data-index="2">Play</div>
+                </div>
+        </div>
+        </td>
+        <td>
+            <div class="td2" id="jc">
+                <img class="td_f_img card" src="./images/JC.webp">
+                <img class="card_rebon" src="./images/redrebon-min.png">
+                <img class="card_rebon card_rebon2" src="./images/bluerebon-min.png">
+                <div class="box bet_amount_Input" data-index="3">Play</div>
+            </div>
+            </div>
+        </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="td3">
+                    <div class="circle row-button" data-row="1"><span>Play</span></div>
+                    <div class="All_jacks">Q</div>
+                    <div class="head_select">All Queens</div>
+                    <img class="td_f_ig td_f_img " src="./images/downloqder.png">
+                </div>
+            </td>
+            <td>
+                <div class="td3" id="qh">
+                    <img class="td_f_img card" src="./images/QH.webp">
+                    <img class="card_rebon" src="./images/redrebon-min.png">
+                    <img class="card_rebon card_rebon2" src="./images/bluerebon-min.png">
+                    <div class="box bet_amount_Input" data-index="4">Play</div>
+                </div>
+                </div>
+            </td>
+            <td>
+                <div class="td3" id="qs">
+                    <img class="td_f_img card" src="./images/QS.webp">
+                    <img class="card_rebon" src="./images/redrebon-min.png">
+                    <img class="card_rebon card_rebon2" src="./images/bluerebon-min.png">
+                    <div class="box bet_amount_Input" data-index="5">Play</div>
+                </div>
+                </div>
+            </td>
+            <td>
+                <div class="td3" id="qd">
+                    <img class="td_f_img card" src="./images/QD.webp">
+                    <img class="card_rebon" src="./images/redrebon-min.png">
+                    <img class="card_rebon card_rebon2" src="./images/bluerebon-min.png">
+                    <div class="box bet_amount_Input" data-index="6">Play</div>
+                </div>
+                </div>
+            </td>
+            <td>
+                <div class="td3" id="qc">
+                    <img class="td_f_img card" src="./images/QC.webp">
+                    <img class="card_rebon" src="./images/redrebon-min.png">
+                    <img class="card_rebon card_rebon2" src="./images/bluerebon-min.png">
+                    <div class="box bet_amount_Input" data-index="7">Play</div>
+                </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="td4">
+                    <div class="circle row-button" data-row="2"><span>Play</span></div>
+                    <div class="All_jacks">K</div>
+                    <div class="head_select">All Kings</div>
+                    <img class="td_f_ig td_f_img" src="./images/downloqder.png">
+                </div>
+            </td>
+            <td>
+                <div class="td4" id="kh">
+
+                    <img class="td_f_img card " src="./images/KH.webp">
+                    <img class="card_rebon" src="./images/redrebon-min.png">
+                    <img class="card_rebon card_rebon2" src="./images/bluerebon-min.png">
+                    <div class="td_f_ig box bet_amount_Input" data-index="8">Play</div>
+                </div>
+                </div>
+            </td>
+            <td>
+                <div class="td4" id="ks">
+                    <img class="td_f_img card " src="./images/KS.webp">
+                    <img class="card_rebon" src="./images/redrebon-min.png">
+                    <img class="card_rebon card_rebon2" src="./images/bluerebon-min.png">
+                    <div class="box bet_amount_Input" data-index="9">Play</div>
+                </div>
+                </div>
+            </td>
+            <td>
+                <div class="td4" id="kd">
+                    <img class="td_f_img card" src="./images/KD.webp">
+                    <img class="card_rebon" src="./images/redrebon-min.png">
+                    <img class="card_rebon card_rebon2" src="./images/bluerebon-min.png">
+                    <div class="box bet_amount_Input" data-index="10">Play</div>
+                </div>
+                </div>
+            </td>
+            <td>
+                <div class="td4" id="kc">
+                    <img class="td_f_img card" src="./images/KC.webp">
+                    <img class="card_rebon" src="./images/redrebon-min.png">
+                    <img class="card_rebon card_rebon2" src="./images/bluerebon-min.png">
+                    <div class="box bet_amount_Input" data-index="11">Play</div>
+                </div>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+        </table>
+        </div>
+        </div>
+
+
+        <div class="history">
+            <div class="hisresult">
+                <table class="restable">
+                    <tr>
+                        <td class="first_result_td">
+
+                            <div class="Round_result cii">&nbsp;K
+                                <div>
+                                    <img class="resimg" src="./images/hearts1.png">
+
+                                </div>
+
+                            </div>
+                            <div class="time_res">1.30</div>
+                        </td>
+                        <td>
+                            <div class="Round_result">&nbsp;J
+                                <div><img class="res_img" src="./images/speads.png"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Round_result">&nbsp;J
+                                <div><img class="res_img" src="./images/club.png"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Round_result">&nbsp;Q
+                                <div><img class="res_img" src="./images/speads.png"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Round_result">&nbsp;K
+                                <div><img class="res_img" src="./images/hearts1.png"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Round_result">&nbsp;Q
+                                <div><img class="res_img" src="./images/club.png"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Round_result">&nbsp;K
+                                <div><img class="res_img" src="./images/speads.png"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Round_result">&nbsp;K
+                                <div><img class="res_img" src="./images/speads.png"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Round_result">&nbsp;J
+                                <div><img class="res_img" src="./images/diamond.png"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="Round_result">&nbsp;J
+                                <div><img class="res_img" src="./images/hearts1.png"></div>
+                            </div>
+                        </td>
+
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+
+        <div id="coins">
+
+            <button class="coin" data-value="1" style="background-image: url('./images/chip.png');"></button>
+            <div class="num num0">1</div>
+            <button class="coin" data-value="2" style="background-image: url('./images/chip2.png');"></button>
+            <span class="num num1" data-value="2">2</span>
+            <button class="coin" data-value="5" style="background-image: url('./images//chip3.png');"></button>
+            <span class="num num2">5</span>
+            <button class="coin" data-value="10" style="background-image: url('./images/chip5.png');"></button>
+            <span class="num num3">10</span>
+            <button class="coin" data-value="50" style="background-image: url('./images/chip6.png');"></button>
+            <span class="num num4">50</span>
+            <button class="coin" data-value="100" style="background-image: url('./images/chip4.png');"></button>
+            <span class="num num5">100</span>
+            <button class="coin" data-value="500" style="background-image: url('./images/chip7.png');"></button>
+            <span class="num num6">500</span>
+            <button class="coin" data-value="1000" style="background-image: url('./images/chip4.png');"></button>
+            <span class="num num7">1000</span>
+
+        </div>
+
+
+        <div class="buttonsec">
+            <div class="childsec Blance">Balance:</div>
+            <div class="childsec">Play:</div>
+            <div class="childsec">Win:</div>
+        </div>
+
+        <div class="placechip">
+            <div class="placechipp">Place Your Chips</div>
+        </div>
+
+        <div class="wheel_contanair">
+            <div class="pointer_wheel"><img src="./images/pointer2.png"></div>
+            <div class="banner_wheel"></div>
+            <div class="wheel_circle">
+                <div class="wheel_circle contan_cir">
+                    <div class="wheel_circle cir_main" id="outerDiv">
+                    </div>
+                    <div class="inner_cir" id="innerDiv"></div>
+                </div>
+            </div>
+        </div>
+        <div id="app_timmer">
+            <div class="Timmer_container">
+                <div class="dial">
+
+                </div>
+                <div class="dial2">
+                    <div class="Time_display">00</div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="action_button">
+            <div class="bet_button">Bet</div>
+            <div class="repeat_button">Repeat</div>
+            <div class="clear_button">Clear</div>
+
+        </div>
+
+        <div class="Date_time">2/4/2025 11:18:00 AM</div>
+        <div class="Date_time Draw_time">Draw Time:12.05</div>
+    </main>
+</body>
+
+</script>
+<script src="./script.js"></script>
+
+</html>
